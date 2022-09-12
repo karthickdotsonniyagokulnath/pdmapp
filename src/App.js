@@ -5,16 +5,20 @@ import { history } from './helpers/common';
 import store from './store'
 import { ToastContainer } from 'react-toastify';
 import Panel from './layouts/Panel';
+import ThemeProvider from 'react-bootstrap/ThemeProvider'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 	return (
 		<Provider store={store}>
 			<Router history={history}>
-				<Panel />
-				<ToastContainer
-					position="top-right"
-					autoClose={5000}
-				/>
+				<ThemeProvider>
+					<Panel />
+					<ToastContainer
+						position="top-right"
+						autoClose={5000}
+					/>
+				</ThemeProvider>
 			</Router>
 		</Provider>
 	);
