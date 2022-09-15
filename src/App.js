@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import Panel from './layouts/Panel';
 import ThemeProvider from 'react-bootstrap/ThemeProvider'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LeftSideBar from './components/LeftSideBar';
 
 function App() {
 	return (

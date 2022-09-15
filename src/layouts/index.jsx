@@ -5,8 +5,9 @@ import NavBar from "../components/NavBar";
 export default function({children}){
     return (
         <div>
-            <LeftSideBar />
             <NavBar />
+            <LeftSideBar />
+            
             {children}
         </div>
     )
