@@ -14,13 +14,12 @@ const LeftSideBar = () => {
     };
     
     return (
-        <>
         <div id="header">
             <ProSidebar collapsed={menuCollapse}>
             <SidebarHeader>
-                <div className="logotext">
+                {/* <div className="logotext">
                     <p>{menuCollapse ? "Logo" : "Big Logo"}</p>
-                </div>
+                </div> */}
                 <div className="closemenu" onClick={menuIconClick}>
                     {menuCollapse ? <FiArrowRightCircle /> : <FiArrowLeftCircle />}
                 </div>
@@ -41,7 +40,6 @@ const LeftSideBar = () => {
             </SidebarFooter>
             </ProSidebar>
         </div>
-        </>
     );
 }
 
