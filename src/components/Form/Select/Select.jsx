@@ -4,15 +4,13 @@ import Dropdown from "react-select"
 
 function Select(props) {
 
-    const { list, value, setValue, isMulti } = props
+    const { list, value, onChange, isMulti } = props
 
     return (
         <Dropdown
             options={list}
             value={value}
-            onChange={v => {
-                setValue(v)
-            }}
+            onChange={onChange}
             isMulti={isMulti}
             {...props}
         />
@@ -22,7 +20,7 @@ function Select(props) {
 Select.propTypes = {
     list: PropTypes.array.isRequired,
     value: PropTypes.any.isRequired,
-    setValue: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
     isMulti: PropTypes.bool
 }
 

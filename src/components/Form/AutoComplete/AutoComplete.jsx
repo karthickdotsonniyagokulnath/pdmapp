@@ -5,7 +5,7 @@ import { FormControl } from 'react-bootstrap'
 
 function AutoComplete(props) {
 
-    const { value, setValue, list } = props
+    const { value, onChange, list } = props
 
     return (
         <Autocomplete
@@ -21,8 +21,8 @@ function AutoComplete(props) {
                 </div>
             }
             value={value}
-            onChange={e => setValue(e.target.value)}
-            onSelect={value => setValue(value)}
+            onChange={e => onChange(e.target.value)}
+            onSelect={onChange}
             {...props}
         />
     )
@@ -31,7 +31,7 @@ function AutoComplete(props) {
 AutoComplete.propTypes = {
     list: PropTypes.array.isRequired,
     value: PropTypes.string.isRequired,
-    setValue: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired
 }
 
 export default AutoComplete

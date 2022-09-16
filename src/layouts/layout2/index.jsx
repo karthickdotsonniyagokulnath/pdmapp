@@ -7,7 +7,7 @@ export default function({children}){
     return (
         <>
             <SiderBar />
-            <div class="container-fluid" id="main-area">
+            <div className="container-fluid" id="main-area">
                 <NavBar />
                 {children}
             </div>

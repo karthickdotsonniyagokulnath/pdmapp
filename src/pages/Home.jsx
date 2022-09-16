@@ -18,6 +18,7 @@ export default function () {
 
     const afterSubmit = data => {
         debugger
+        reset(defaultValues)
     }
 
     return (
@@ -26,13 +27,12 @@ export default function () {
                 <div className="col-lg">
                     <FormGroup>
                         <FormLabel>Fruit:</FormLabel>
-                        {/* <AutoComplete value={fruit} setValue={setFruit}  /> */}
                         <Controller
                             list={fruitList}
                             name="fruit"
                             control={control}
-                            render={({field}) => {
-                                return <AutoComplete value={field.value} setValue={field.onChange} list={fruitList} inputProps={{placeholder: "Select Fruit"}} />
+                            render={({field: { value, onChange }}) => {
+                                return <AutoComplete {...{value, onChange}} list={fruitList} inputProps={{placeholder: "Select Fruit"}} />
                             }}
                         />
                     </FormGroup>
@@ -40,13 +40,12 @@ export default function () {
                 <div className="col-lg">
                     <FormGroup>
                         <FormLabel>Brand:</FormLabel>
-                        {/* <Select list={brandList} value={brand} setValue={setBrand} isMulti={true} closeMenuOnSelect={false} placeholder="Select Brand" /> */}
                         <Controller
                             list={fruitList}
                             name="brand"
                             control={control}
-                            render={({field}) => {
-                                return <Select value={field.value} list={brandList} setValue={field.onChange} placeholder="Select Brand" isMulti={true} closeMenuOnSelect={false} />
+                            render={({field: { value, onChange }}) => {
+                                return <Select {...{value, onChange}} list={brandList} placeholder="Select Brand" isMulti={true} closeMenuOnSelect={false} />
                             }}
                         />
                     </FormGroup>
