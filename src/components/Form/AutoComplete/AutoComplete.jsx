@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import Autocomplete  from "react-autocomplete"
 import { FormControl } from 'react-bootstrap'
 
-function AutoComplete({value, setValue, list}) {
+function AutoComplete(props) {
+
+    const { value, setValue, list } = props
 
     return (
         <Autocomplete
@@ -21,6 +23,7 @@ function AutoComplete({value, setValue, list}) {
             value={value}
             onChange={e => setValue(e.target.value)}
             onSelect={value => setValue(value)}
+            {...props}
         />
     )
 }

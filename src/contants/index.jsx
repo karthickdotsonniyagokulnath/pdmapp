@@ -1,1 +1,1 @@
-export const SITE_LAYOUT = 1
+export const SITE_LAYOUT = 2
