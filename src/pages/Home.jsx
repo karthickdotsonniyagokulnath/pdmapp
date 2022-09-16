@@ -28,12 +28,9 @@ export default function () {
                     <FormGroup>
                         <FormLabel>Fruit:</FormLabel>
                         <Controller
-                            list={fruitList}
                             name="fruit"
                             control={control}
-                            render={({field: { value, onChange }}) => {
-                                return <AutoComplete {...{value, onChange}} list={fruitList} inputProps={{placeholder: "Select Fruit"}} />
-                            }}
+                            render={({field: { value, onChange }}) => <AutoComplete {...{value, onChange}} list={fruitList} inputProps={{placeholder: "Select Fruit"}} />}
                         />
                     </FormGroup>
                 </div>
@@ -41,12 +38,9 @@ export default function () {
                     <FormGroup>
                         <FormLabel>Brand:</FormLabel>
                         <Controller
-                            list={fruitList}
                             name="brand"
                             control={control}
-                            render={({field: { value, onChange }}) => {
-                                return <Select {...{value, onChange}} list={brandList} placeholder="Select Brand" isMulti={true} closeMenuOnSelect={false} />
-                            }}
+                            render={({field: { value, onChange }}) => <Select {...{value, onChange}} list={brandList} placeholder="Select Brand" isMulti={true} closeMenuOnSelect={false} />}
                         />
                     </FormGroup>
                 </div>
