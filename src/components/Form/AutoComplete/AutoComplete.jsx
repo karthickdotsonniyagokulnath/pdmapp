@@ -3,10 +3,13 @@ import PropTypes from 'prop-types'
 import Autocomplete  from "react-autocomplete"
 import { FormControl } from 'react-bootstrap'
 
-function AutoComplete({value, setFruit, list}) {
+function AutoComplete({value, setValue, list}) {
 
     return (
         <Autocomplete
+            wrapperStyle={{
+                display: "block"
+            }}
             renderInput={props => <FormControl type="text" {...props} />}
             getItemValue={(item) => item.value}
             items={list.filter(item => item.value.includes(value))}
@@ -16,8 +19,8 @@ function AutoComplete({value, setFruit, list}) {
                 </div>
             }
             value={value}
-            onChange={e => setFruit(e.target.value)}
-            onSelect={value => setFruit(value)}
+            onChange={e => setValue(e.target.value)}
+            onSelect={value => setValue(value)}
         />
     )
 }
@@ -25,7 +28,7 @@ function AutoComplete({value, setFruit, list}) {
 AutoComplete.propTypes = {
     list: PropTypes.array.isRequired,
     value: PropTypes.string.isRequired,
-    setFruit: PropTypes.func.isRequired
+    setValue: PropTypes.func.isRequired
 }
 
 export default AutoComplete

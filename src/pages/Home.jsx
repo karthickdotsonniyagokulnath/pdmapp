@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import { FormGroup, FormLabel } from "react-bootstrap";
 import AutoComplete from "../components/Form/AutoComplete";
+import Select from "../components/Form/Select";
 
 export default function () {
 
@@ -11,7 +13,13 @@ export default function () {
         <>
             <div className="row p-10">
                 <div className="col-lg">
-                    <AutoComplete value={fruit} setFruit={setFruit} list={fruitList} />
+                    <FormGroup>
+                        <FormLabel>Fruit:</FormLabel>
+                        <AutoComplete value={fruit} setValue={setFruit} list={fruitList} />
+                    </FormGroup>
+                </div>
+                <div className="col-lg">
+                    <Select />
                 </div>
             </div>
         </>
