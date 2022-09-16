@@ -1,6 +1,6 @@
 import React from "react";
-import LeftSideBar from "../components/LeftSideBar";
-import NavBar from "../components/NavBar";
+import LeftSideBar from "./LeftSideBar";
+import NavBar from "./NavBar";
 
 import "./style.css"
 
