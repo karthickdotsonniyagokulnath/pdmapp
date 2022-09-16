@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Layouts from ".";
+import Layouts from "./layout2";
 import Routes from "./Routes";
 
 export default function(){
